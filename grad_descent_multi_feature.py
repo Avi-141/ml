@@ -1,3 +1,46 @@
+"""
+Gradient Descent for Multiple Feature Linear Regression (Multivariate)
+
+This module implements linear regression with multiple variables (features),
+optimized using batch gradient descent and vectorized operations.
+
+Mathematical Formulation:
+1. Hypothesis (Model): 
+   f_wb(x) = w_1*x_1 + w_2*x_2 + ... + w_n*x_n + b = w·x + b
+   where 'w' is a vector of weights, 'x' is a vector of features, and 'b' is the scalar bias.
+
+2. Cost Function (Mean Squared Error - MSE):
+   J(w,b) = (1 / 2m) * Σ_{i=1}^{m} (f_wb(x^(i)) - y^(i))^2
+   The division by 2 is a mathematical convenience that cancels out when we take the derivative.
+
+3. Gradient Descent Update Rules:
+   Repeat until convergence:
+     w_j = w_j - α * (∂J / ∂w_j)   for j = 1..n
+     b = b - α * (∂J / ∂b)
+   where α (alpha) is the learning rate, and the partial derivatives are:
+     ∂J / ∂w_j = (1 / m) * Σ_{i=1}^{m} (f_wb(x^(i)) - y^(i)) * x_j^(i)
+     ∂J / ∂b = (1 / m) * Σ_{i=1}^{m} (f_wb(x^(i)) - y^(i))
+
+Statistical Perspective:
+Minimizing the Mean Squared Error is mathematically equivalent to Maximum Likelihood Estimation (MLE) 
+under the assumption that the target variable y is generated from the linear model plus normally 
+distributed noise (Gaussian error).
+
+Intuition:
+- Gradient descent is an iterative optimization algorithm for finding the minimum of a function.
+- In multiple dimensions, the gradient is a vector pointing in the direction of steepest ascent. 
+  By subtracting the gradient (scaled by the learning rate α), we move in the direction of steepest descent.
+- The learning rate α determines the step size. If α is too small, convergence is slow. 
+  If α is too large, the algorithm may overshoot the minimum and diverge.
+- Since the MSE cost function for linear regression is a convex "bowl" shape in n-dimensional space, 
+  gradient descent is guaranteed to find the single global minimum (assuming an appropriate learning rate).
+
+Applications:
+- Predicting a continuous outcome based on multiple predictor variables.
+- Examples: Predicting house prices based on square footage, number of bedrooms, and age of the house.
+  Estimating a car's fuel efficiency based on its weight, engine size, and horsepower.
+"""
+
 import numpy as np
 
 

@@ -1,5 +1,34 @@
 import numpy as np
 
+"""
+Logistic Regression Cost Functions
+
+This module implements various cost functions used in Logistic Regression and related optimization problems.
+
+Mathematical Formulation:
+The standard cost function for logistic regression is the Cross-Entropy Loss (or Log Loss).
+Given a dataset with m examples, where x^(i) is the feature vector and y^(i) is the true label (0 or 1):
+    f_wb(x^(i)) = g(w·x^(i) + b) = 1 / (1 + e^{-(w·x^(i) + b)})
+    J(w,b) = - (1/m) * Σ [ y^(i) * log(f_wb(x^(i))) + (1 - y^(i)) * log(1 - f_wb(x^(i))) ]
+
+Statistical Perspective:
+The cross-entropy cost function is derived from Maximum Likelihood Estimation (MLE).
+Assuming the target variable y follows a Bernoulli distribution given x, parameterized by p = f_wb(x):
+    P(y|x; w,b) = p^y * (1-p)^(1-y)
+The likelihood of the entire dataset is the dataset's joint probability.
+Minimizing the negative log-likelihood of this distribution yields the exact Cross-Entropy Loss equation.
+
+Intuition:
+- If the true label y = 1 and the model predicts p ≈ 1, the cost is near 0.
+- If the true label y = 1 and the model predicts p ≈ 0, the cost approaches infinity (heavy penalty).
+- The log function ensures that confident but wrong predictions are penalized exponentially, driving the model to adjust its weights.
+- Unlike Mean Squared Error (MSE), which is non-convex for logistic regression, Cross-Entropy Loss is convex, guaranteeing a single global minimum during gradient descent optimization.
+
+Applications:
+- Binary Classification: Spam detection (Spam/Not Spam), Disease diagnosis (Malignant/Benign), Fraud detection.
+- Probability Calibration: Outputting a well-calibrated probability score (e.g., 80% chance of rain) rather than just a hard class label.
+- Base for Neural Networks: Cross-entropy is the standard loss function for classification tasks in deep learning.
+"""
 
 # mean square error cost function
 '''
