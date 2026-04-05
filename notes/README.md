@@ -1,13 +1,14 @@
 # ML Notes Roadmap
 
-This folder now contains theory notes written in a more technical style. Most of
-the core documents follow the same structure:
+This folder is now organized into topic folders so the note library is easier to
+navigate and study in a logical sequence.
+
+Most core notes still follow the same internal structure:
 
 1. `Intro And Concepts`
 2. `Deep Dive`
 
-The goal is not just definition-level understanding, but mechanism-level
-understanding:
+The goal remains mechanism-level understanding:
 
 - what the concept is
 - why it exists
@@ -16,379 +17,186 @@ understanding:
 - what geometry or intuition sits underneath it
 - where it shows up in modern ML systems
 
-## Reading Order
+## Folder Structure
 
-If you want to study these notes in a logical sequence, this is the recommended
-path:
+```text
+notes/
+├── README.md
+├── 01-foundations/
+│   ├── README.md
+│   ├── neural_networks_math_and_statistics.md
+│   ├── matrices_eigenvalues_and_eigenvectors_for_ml.md
+│   ├── pca_and_covariance_geometry.md
+│   ├── gradients_loss_and_gradient_descent.md
+│   ├── backpropagation_from_first_principles.md
+│   ├── adam_optimizer.md
+│   └── softmax.md
+├── 02-sequence-models/
+│   ├── README.md
+│   ├── sequence_models_rnn_lstm_gru.md
+│   ├── attention_and_self_attention.md
+│   └── transformers_from_first_principles.md
+├── 03-transfer-and-llm-training/
+│   ├── README.md
+│   ├── transfer_learning.md
+│   ├── pretraining_and_finetuning.md
+│   ├── where_transfer_learning_is_used.md
+│   └── llm_training_pipeline.md
+└── 04-kernel-methods/
+    ├── README.md
+    ├── kernel_functions.md
+    └── kernel.txt
+```
 
-1. `neural_networks_math_and_statistics.md`
-2. `matrices_eigenvalues_and_eigenvectors_for_ml.md`
-3. `gradients_loss_and_gradient_descent.md`
-4. `backpropagation_from_first_principles.md`
-5. `sequence_models_rnn_lstm_gru.md`
-6. `attention_and_self_attention.md`
-7. `transformers_from_first_principles.md`
-8. `adam_optimizer.md`
-9. `transfer_learning.md`
-10. `pretraining_and_finetuning.md`
-11. `where_transfer_learning_is_used.md`
-12. `softmax.md`
-13. `kernel_functions.md`
-14. `kernel.txt`
+## Recommended Reading Order
 
-Why this order:
+If you want the cleanest end-to-end progression, read in this order:
 
-- `neural_networks_math_and_statistics.md` gives the broad mathematical and
-  statistical foundations for neural networks
-- `matrices_eigenvalues_and_eigenvectors_for_ml.md` explains why matrices,
-  spectra, covariance, and curvature matter in ML
-- `gradients_loss_and_gradient_descent.md` builds the intuition for losses,
-  gradients, backpropagation, and descent methods
-- `backpropagation_from_first_principles.md` connects gradients, chain rule,
-  matrix shapes, and efficient gradient computation in layered models
-- `sequence_models_rnn_lstm_gru.md` explains how neural networks model ordered
-  data through recurrence and gating
-- `attention_and_self_attention.md` explains how dynamic relevance weighting
-  addresses key sequence-model bottlenecks
-- `transformers_from_first_principles.md` shows how self-attention becomes the
-  main sequence computation in modern architectures
-- `adam_optimizer.md` explains one of the most important practical optimizers in
-  modern deep learning
-- `transfer_learning.md` defines the broad idea of knowledge reuse across tasks
-- `pretraining_and_finetuning.md` explains the standard modern training pipeline
-- `where_transfer_learning_is_used.md` connects those ideas to transformers,
-  GPT, LLMs, sequence models, and other domains
-- `softmax.md` explains how neural classifiers convert logits into probabilities
-  and why the standard modern training pattern uses linear logits with stable
-  cross-entropy
-- `kernel_functions.md` shifts to a more classical but mathematically important
-  view of non-linearity through geometry and implicit feature spaces
-- `kernel.txt` extends the kernel discussion into specific model families such
-  as KRR, SVR, SVM, and sparse kernel-style formulations
+1. `01-foundations/neural_networks_math_and_statistics.md`
+2. `01-foundations/matrices_eigenvalues_and_eigenvectors_for_ml.md`
+3. `01-foundations/pca_and_covariance_geometry.md`
+4. `01-foundations/gradients_loss_and_gradient_descent.md`
+5. `01-foundations/backpropagation_from_first_principles.md`
+6. `01-foundations/adam_optimizer.md`
+7. `01-foundations/softmax.md`
+8. `02-sequence-models/sequence_models_rnn_lstm_gru.md`
+9. `02-sequence-models/attention_and_self_attention.md`
+10. `02-sequence-models/transformers_from_first_principles.md`
+11. `03-transfer-and-llm-training/transfer_learning.md`
+12. `03-transfer-and-llm-training/pretraining_and_finetuning.md`
+13. `03-transfer-and-llm-training/where_transfer_learning_is_used.md`
+14. `03-transfer-and-llm-training/llm_training_pipeline.md`
+15. `04-kernel-methods/kernel_functions.md`
+16. `04-kernel-methods/kernel.txt`
 
-## Note Map
+## Folder Map
 
-### `neural_networks_math_and_statistics.md`
+### `01-foundations/`
 
-Focus:
+Use this folder when your priority is:
 
-- neural networks as parameterized function classes
-- where linear algebra, calculus, optimization, and statistics fit together
-- why matrices appear in layers
-- representations, losses, and empirical risk
-- approximation, estimation, and optimization viewpoints
+- neural-network math
+- linear algebra and geometry
+- losses and gradients
+- backpropagation
+- optimization
+- softmax and probabilistic outputs
 
-Best read when:
+Start here if you want the strongest mathematical base.
 
-- you want the broad mathematical frame for neural networks before diving into
-  specific optimization details
+### `02-sequence-models/`
 
-### `matrices_eigenvalues_and_eigenvectors_for_ml.md`
+Use this folder when your priority is:
 
-Focus:
-
-- why matrices work in ML and neural networks
-- what eigenvalues and eigenvectors mean geometrically
-- covariance, PCA, Hessians, and conditioning
-- singular values versus eigenvalues
-- recurrent dynamics and spectral intuition
-
-Best read when:
-
-- you want the linear algebra and geometric intuition behind neural-network
-  training and statistical structure
-
-### `gradients_loss_and_gradient_descent.md`
-
-Focus:
-
-- why gradients work
-- why negative gradient is steepest local descent
-- why loss functions are chosen the way they are
-- local linearization, chain rule, and backpropagation
-- stochastic gradient descent, curvature, and conditioning
-
-Best read when:
-
-- you want the mathematical intuition behind training itself
-
-### `backpropagation_from_first_principles.md`
-
-Focus:
-
-- backpropagation as reverse-mode automatic differentiation
-- chain rule through layered computation
-- parameter gradients in matrix form
-- why the forward pass must cache activations
-- vanishing and exploding gradients
-- why BPTT is just backprop on an unrolled recurrent graph
-
-Best read when:
-
-- you want the exact mechanism by which neural networks obtain gradients
-
-### `sequence_models_rnn_lstm_gru.md`
-
-Focus:
-
-- why sequences require special architectures
-- hidden-state recurrence
-- RNN state updates and temporal parameter sharing
-- vanishing/exploding gradients in sequence learning
-- LSTM and GRU gating intuition and equations
-- why recurrence led naturally to attention
-
-Best read when:
-
-- you want the pre-transformer story of sequence modeling
-
-### `attention_and_self_attention.md`
-
-Focus:
-
-- attention as relevance-weighted retrieval
-- encoder-decoder attention
-- query, key, and value formalism
-- self-attention and why softmax appears inside it
-- multi-head attention, causal masking, and long-range dependency handling
-- why attention was the bridge from recurrence to transformers
-
-Best read when:
-
-- you want to understand the conceptual and mathematical jump from RNNs to
-  attention-based models
-
-### `transformers_from_first_principles.md`
-
-Focus:
-
-- transformer blocks from first principles
-- self-attention, feedforward layers, residuals, and normalization
-- positional information
-- encoder-only, decoder-only, and encoder-decoder structures
-- why transformers scale and why they replaced recurrence in many domains
-
-Best read when:
-
-- you want the architectural culmination of the sequence-model track
-
-### `adam_optimizer.md`
-
-Focus:
-
-- why Adam works
-- momentum and second-moment adaptation
-- bias correction
-- coordinatewise scaling
-- Adam vs SGD, RMSProp, and AdamW
-- strengths, failure modes, and practical intuition
-
-Best read when:
-
-- you want to understand modern optimizer behavior beyond plain gradient descent
-
-### `transfer_learning.md`
-
-Focus:
-
-- formal definition of transfer learning
-- source task vs target task
-- why transfer helps statistically and computationally
-- positive transfer vs negative transfer
-- feature extraction vs fine-tuning
-- representation, optimization, and prior views
-
-Best read when:
-
-- you want the conceptual foundation for modern model reuse
-
-### `pretraining_and_finetuning.md`
-
-Focus:
-
-- what pretraining is
-- self-supervised vs supervised pretraining
-- what fine-tuning changes
-- objective-function viewpoint
-- catastrophic forgetting
-- parameter-efficient adaptation
-
-Best read when:
-
-- you want to understand how modern models are actually trained in stages
-
-### `where_transfer_learning_is_used.md`
-
-Focus:
-
-- where transfer learning appears across ML
-- sequence models
+- sequence modeling
+- RNNs, LSTMs, and GRUs
+- attention and self-attention
 - transformers
-- encoder-only, decoder-only, encoder-decoder models
-- GPT and LLM workflows
-- speech, multimodal, and scientific domains
 
-Best read when:
+This folder explains the architectural progression from recurrence to
+transformers.
 
-- you want architectural and domain context
+### `03-transfer-and-llm-training/`
 
-### `kernel_functions.md`
+Use this folder when your priority is:
 
-Focus:
+- transfer learning
+- pretraining and fine-tuning
+- where transfer learning appears
+- modern LLM training and post-training
 
-- kernel as inner product in feature space
-- kernel trick
-- Gram matrix
-- valid kernels and PSD condition
-- RBF, polynomial, linear, sigmoid kernels
+This folder is the bridge from core model architecture to modern foundation-
+model practice.
+
+### `04-kernel-methods/`
+
+Use this folder when your priority is:
+
+- kernels
 - RKHS intuition
-- geometry, smoothness, and regularization
+- classical non-linear ML
+- SVM, SVR, KRR, and regularized kernel methods
 
-Best read when:
+This folder is the classical non-linear theory branch of the library.
 
-- you want the mathematical foundation behind kernel methods
-
-### `softmax.md`
-
-Focus:
-
-- logits and probability distributions
-- why softmax is used for multi-class classification
-- why the last layer is often linear during training
-- cross-entropy, gradients, and numerical stability
-- standard, convolutional, recurrent, and language-model uses of softmax
-- temperature, calibration, and large-vocabulary approximations
-
-Best read when:
-
-- you want a deep understanding of modern multi-class output layers and the
-  probability geometry behind them
-
-### `kernel.txt`
-
-Focus:
-
-- kernel regularization
-- kernel ridge regression
-- kernel SVM classification
-- kernel SVR
-- kernel lasso and elastic-net-style ideas
-- dense vs sparse dual solutions
-- practical trade-offs and scalability
-
-Best read when:
-
-- you want the model-family view that sits on top of kernel-function theory
-
-## Two Suggested Study Tracks
+## Suggested Study Tracks
 
 ### Track 0: Neural-Network Math And Optimization
 
-Read in this order:
+1. `01-foundations/neural_networks_math_and_statistics.md`
+2. `01-foundations/matrices_eigenvalues_and_eigenvectors_for_ml.md`
+3. `01-foundations/pca_and_covariance_geometry.md`
+4. `01-foundations/gradients_loss_and_gradient_descent.md`
+5. `01-foundations/backpropagation_from_first_principles.md`
+6. `01-foundations/adam_optimizer.md`
+7. `01-foundations/softmax.md`
 
-1. `neural_networks_math_and_statistics.md`
-2. `matrices_eigenvalues_and_eigenvectors_for_ml.md`
-3. `gradients_loss_and_gradient_descent.md`
-4. `backpropagation_from_first_principles.md`
-5. `adam_optimizer.md`
-6. `softmax.md`
-
-This track is best if your focus is:
+Best if your focus is:
 
 - why neural networks are written with matrices
-- what losses and gradients are doing mathematically
-- why eigenvalues, curvature, and conditioning matter
-- how backpropagation computes usable gradients through layered systems
-- why gradient descent and Adam work
+- why eigenvalues, covariance, and curvature matter
+- why gradients and backpropagation work
+- why Adam works
 - how logits become probabilities
 
-### Track 1: Modern Deep Learning Systems
+### Track 1: Sequence Models To Modern LLMs
 
-Read in this order:
+1. `02-sequence-models/sequence_models_rnn_lstm_gru.md`
+2. `02-sequence-models/attention_and_self_attention.md`
+3. `02-sequence-models/transformers_from_first_principles.md`
+4. `03-transfer-and-llm-training/transfer_learning.md`
+5. `03-transfer-and-llm-training/pretraining_and_finetuning.md`
+6. `03-transfer-and-llm-training/where_transfer_learning_is_used.md`
+7. `03-transfer-and-llm-training/llm_training_pipeline.md`
 
-1. `sequence_models_rnn_lstm_gru.md`
-2. `attention_and_self_attention.md`
-3. `transformers_from_first_principles.md`
-4. `transfer_learning.md`
-5. `pretraining_and_finetuning.md`
-6. `where_transfer_learning_is_used.md`
-7. `softmax.md`
-8. `adam_optimizer.md`
-
-This track is best if your focus is:
+Best if your focus is:
 
 - sequence modeling
+- attention
 - transformers
-- GPT
-- LLMs
-- instruction tuning
-- foundation models
-- classification heads, logits, and next-token distributions
-- practical optimization in modern deep learning
+- GPT and LLMs
+- modern staged training pipelines
 
 ### Track 2: Classical Non-Linear Learning Theory
 
-Read in this order:
+1. `04-kernel-methods/kernel_functions.md`
+2. `04-kernel-methods/kernel.txt`
 
-1. `kernel_functions.md`
-2. `kernel.txt`
-
-This track is best if your focus is:
+Best if your focus is:
 
 - kernels
 - implicit feature spaces
 - margin methods
 - non-linear regression and classification
 
-## How The Notes Connect
+## How The Sections Connect
 
 At a high level:
 
 ```text
-transfer learning
+foundations
     ->
-pretraining / fine-tuning pipelines
+sequence models
     ->
-modern transformers / LLM workflows
+transformers
+    ->
+transfer learning and LLM training
 
-kernel methods
+foundations
     ->
-implicit feature-space geometry
+kernel geometry
     ->
-non-linear classical ML models such as SVM, SVR, KRR
+classical non-linear ML
 ```
 
-These are different parts of machine learning history and practice, but they are
-connected by a shared theme:
+The common thread across the whole library is:
 
-- how learned or chosen representations make difficult problems easier
+- how representations, geometry, and optimization make hard learning problems
+  easier
 
-## Possible Next Additions
+## Current Library
 
-Natural next documents to add:
-
-- `attention_and_self_attention.md`
-- `transformers_from_first_principles.md`
-- `svm_margin_duality.md`
-- `rkhs_and_representer_theorem.md`
-- `llm_training_pipeline.md`
-- `fine_tuning_vs_in_context_learning.md`
-- `pca_and_covariance_geometry.md`
-
-## Current Notes
-
-- `README.md`
-- `neural_networks_math_and_statistics.md`
-- `matrices_eigenvalues_and_eigenvectors_for_ml.md`
-- `gradients_loss_and_gradient_descent.md`
-- `backpropagation_from_first_principles.md`
-- `sequence_models_rnn_lstm_gru.md`
-- `attention_and_self_attention.md`
-- `transformers_from_first_principles.md`
-- `adam_optimizer.md`
-- `transfer_learning.md`
-- `pretraining_and_finetuning.md`
-- `where_transfer_learning_is_used.md`
-- `softmax.md`
-- `kernel_functions.md`
-- `kernel.txt`
+- `01-foundations/README.md`
+- `02-sequence-models/README.md`
+- `03-transfer-and-llm-training/README.md`
+- `04-kernel-methods/README.md`
