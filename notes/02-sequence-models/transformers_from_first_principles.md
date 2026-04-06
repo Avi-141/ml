@@ -341,3 +341,9 @@ They process sequences by repeatedly:
 Their success comes from combining expressive long-range interaction with
 parallelizable computation, which made them the dominant architecture of modern
 deep learning.
+
+## Further Reading
+
+- `Canonical paper`: Vaswani et al., "Attention Is All You Need" (2017).
+- `Best intuition resource`: Jay Alammar, *The Illustrated Transformer*.
+- `Best practical code resource`: `karpathy/nanoGPT` on GitHub and Harvard NLP's *The Annotated Transformer*.

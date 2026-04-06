@@ -334,3 +334,9 @@ Together, they explain:
 - why PCA extracts principal structure
 - why recurrent dynamics can explode or vanish
 - why some optimization problems are easy and others are hard
+
+## Further Reading
+
+- `Canonical reference`: Gilbert Strang's linear algebra notes and lectures, especially on eigenvalues, diagonalization, and quadratic forms.
+- `Best intuition resource`: 3Blue1Brown, *Essence of Linear Algebra*.
+- `Best practical code resource`: NumPy and scikit-learn examples for eigendecomposition, SVD, and PCA.

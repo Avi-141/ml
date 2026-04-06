@@ -351,3 +351,9 @@ hidden state" with "store representations across positions and dynamically route
 information between them."
 
 That is why attention is the immediate conceptual precursor to transformers.
+
+## Further Reading
+
+- `Canonical paper`: Bahdanau, Cho, and Bengio, "Neural Machine Translation by Jointly Learning to Align and Translate" (2014).
+- `Best intuition resource`: Lilian Weng, *Attention? Attention!*, and Jay Alammar, *The Illustrated Transformer*.
+- `Best practical code resource`: Harvard NLP's *The Annotated Transformer*.

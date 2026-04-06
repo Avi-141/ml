@@ -424,3 +424,9 @@ Evaluation and deployment determine whether the result is actually useful.
 
 That staged decomposition is the key to understanding modern large language model
 development.
+
+## Further Reading
+
+- `Canonical papers`: Brown et al., "Language Models are Few-Shot Learners" (GPT-3, 2020); Ouyang et al., "Training language models to follow instructions with human feedback" (InstructGPT, 2022); Rafailov et al., "Direct Preference Optimization" (2023).
+- `Best intuition resource`: Sebastian Raschka's LLM-from-scratch materials and Andrej Karpathy's GPT / tokenizer / LLM training talks.
+- `Best practical code resource`: `karpathy/nanoGPT` and `huggingface/trl` on GitHub.

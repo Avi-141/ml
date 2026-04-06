@@ -468,3 +468,9 @@ Their differences then become easier to understand:
 The deep unifying principle is that kernels define the space of functions, while
 regularization determines which parts of that space are statistically stable and
 computationally usable.
+
+## Further Reading
+
+- `Canonical papers`: Cortes and Vapnik, "Support-Vector Networks" (1995), and Smola and Schölkopf, "A Tutorial on Support Vector Regression" (2004).
+- `Best intuition resource`: Josh Starmer's StatQuest SVM / SVR explainers and Andrew Ng's CS229 kernel method notes.
+- `Best practical code resource`: scikit-learn documentation for `SVC`, `SVR`, and `KernelRidge`.

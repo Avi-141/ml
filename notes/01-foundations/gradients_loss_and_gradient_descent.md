@@ -382,3 +382,9 @@ objective, often with probabilistic meaning.
 Gradient descent works because moving opposite the gradient is the steepest local
 decrease direction, and repeated local improvements are often enough to find
 useful parameters in high-dimensional neural-network landscapes.
+
+## Further Reading
+
+- `Canonical paper`: Bottou, Curtis, and Nocedal, "Optimization Methods for Large-Scale Machine Learning" (2018).
+- `Best intuition resource`: Distill, *Why Momentum Really Works*, plus the CS231n optimization notes.
+- `Best practical code resource`: `karpathy/micrograd` on GitHub.

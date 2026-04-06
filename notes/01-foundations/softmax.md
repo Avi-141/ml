@@ -707,3 +707,9 @@ That is why the standard modern design is:
 - cross-entropy loss with `from_logits=True` during training
 - explicit softmax only when probabilities are needed for interpretation,
   calibration, or inference.
+
+## Further Reading
+
+- `Canonical reference`: the CS231n linear classification and softmax notes.
+- `Best intuition resource`: Andrej Karpathy's *makemore* lectures and notes on logits, softmax, and next-token prediction.
+- `Best practical code resource`: `karpathy/makemore` on GitHub.

@@ -616,3 +616,9 @@ It does four things at once:
 That is why kernels remain one of the most elegant ideas in machine learning:
 they let us trade raw-space linearity for feature-space linearity without having
 to explicitly build the feature space itself.
+
+## Further Reading
+
+- `Canonical reference`: Schölkopf and Smola, *Learning with Kernels*, and Cortes and Vapnik, "Support-Vector Networks" (1995).
+- `Best intuition resource`: Andrew Ng's CS229 kernel notes and Josh Starmer's StatQuest SVM / kernel explainers.
+- `Best practical code resource`: scikit-learn documentation for `SVC`, `SVR`, and `KernelRidge`.

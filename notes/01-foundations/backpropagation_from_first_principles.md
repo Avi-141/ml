@@ -339,3 +339,9 @@ It works because:
 
 Mathematically, it decomposes global sensitivity into local derivatives.
 Practically, it makes modern neural-network training possible.
+
+## Further Reading
+
+- `Canonical paper`: Rumelhart, Hinton, and Williams, "Learning Representations by Back-Propagating Errors" (1986).
+- `Best intuition resource`: Michael Nielsen's backpropagation chapters and 3Blue1Brown's backpropagation visual explanation.
+- `Best practical code resource`: `karpathy/micrograd` on GitHub.

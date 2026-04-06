@@ -355,3 +355,9 @@ updated more effectively.
 
 They matter because they solve the original sequence problem and make clear why
 attention and transformers were later such a major step forward.
+
+## Further Reading
+
+- `Canonical papers`: Elman, "Finding Structure in Time" (1990); Hochreiter and Schmidhuber, "Long Short-Term Memory" (1997); Cho et al., "Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation" (2014).
+- `Best intuition resource`: Chris Olah, *Understanding LSTM Networks*, and Andrej Karpathy, *The Unreasonable Effectiveness of Recurrent Neural Networks*.
+- `Best practical code resource`: `karpathy/char-rnn` on GitHub.

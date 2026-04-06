@@ -324,3 +324,9 @@ Its success comes from matching the realities of neural-network optimization:
 - large parameter spaces
 
 That is why Adam is one of the standard optimizers in modern deep learning.
+
+## Further Reading
+
+- `Canonical paper`: Kingma and Ba, "Adam: A Method for Stochastic Optimization" (2014), and Reddi et al., "On the Convergence of Adam and Beyond" (2018).
+- `Best intuition resource`: Distill, *Why Momentum Really Works*, as a foundation for understanding Adam's momentum component.
+- `Best practical code resource`: `karpathy/nanoGPT` on GitHub and the PyTorch AdamW documentation.

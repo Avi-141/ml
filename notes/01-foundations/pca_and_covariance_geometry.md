@@ -383,3 +383,9 @@ Algebraically, it is an eigenvalue or SVD problem.
 
 That is why PCA is one of the cleanest and most important bridges between
 statistics, geometry, and machine learning.
+
+## Further Reading
+
+- `Canonical paper`: Pearson, "On Lines and Planes of Closest Fit to Systems of Points in Space" (1901), and Hotelling, "Analysis of a Complex of Statistical Variables into Principal Components" (1933).
+- `Best intuition resource`: Josh Starmer's StatQuest PCA explainers.
+- `Best practical code resource`: scikit-learn's PCA documentation and examples.

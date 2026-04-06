@@ -354,3 +354,9 @@ So:
 - Supervised pretraining uses a large labeled dataset before the final task.
 - Fine-tuning adapts the pretrained model to a specific target task.
 - These stages are a major reason modern deep learning works so well at scale.
+
+## Further Reading
+
+- `Canonical papers`: Howard and Ruder, "Universal Language Model Fine-tuning for Text Classification" (ULMFiT, 2018); Devlin et al., "BERT" (2018); Radford et al., "Improving Language Understanding by Generative Pre-Training" (2018).
+- `Best intuition resource`: Chris McCormick's BERT fine-tuning and transformer posts.
+- `Best practical code resource`: Hugging Face Transformers examples and course materials.

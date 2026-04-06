@@ -342,3 +342,9 @@ fit together:
 - losses encode what counts as error
 - gradients tell us how to change parameters
 - statistical learning determines whether those changes generalize
+
+## Further Reading
+
+- `Canonical reference`: Goodfellow, Bengio, and Courville, *Deep Learning*.
+- `Best intuition resource`: Michael Nielsen, *Neural Networks and Deep Learning*, plus the 3Blue1Brown neural network series.
+- `Best practical code resource`: `karpathy/micrograd` on GitHub.

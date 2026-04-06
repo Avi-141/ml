@@ -421,3 +421,9 @@ Yes:
 
 In fact, modern transformers and GPT systems are best understood as transfer
 learning systems first and task-specific models second.
+
+## Further Reading
+
+- `Canonical reference`: Bommasani et al., "On the Opportunities and Risks of Foundation Models" (2021).
+- `Best intuition resource`: Sebastian Raschka's writing on LLMs and foundation models, plus Jay Alammar's transformer explainers.
+- `Best practical code resource`: Hugging Face model documentation and example repositories.

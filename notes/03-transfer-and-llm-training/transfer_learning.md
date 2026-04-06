@@ -76,6 +76,94 @@ Examples:
 
 This can be viewed in three complementary ways.
 
+#### Feature Reuse
+
+Early and middle layers often learn reusable structure rather than task-specific
+surface details.
+
+In vision this may include:
+
+- edges
+- corners
+- textures
+- part-whole patterns
+
+In language this may include:
+
+- token statistics
+- syntax
+- semantic relations
+- discourse-level dependencies
+
+This is why transfer often works especially well when source and target tasks
+share latent structure even if they do not share identical labels.
+
+#### Inductive Bias Transfer
+
+Pretraining does not only provide useful weights. It also provides a useful
+inductive bias:
+
+- what kinds of features are likely to matter
+- what kinds of functions are easy to express
+- what kinds of solutions optimization will prefer
+
+So transfer learning works partly because the source task teaches the model what
+to pay attention to before the target task even begins.
+
+#### Optimization Landscape Shaping
+
+A pretrained model starts optimization in a parameter region already encoding
+useful abstractions. That changes the target optimization problem from:
+
+```text
+discover useful features + discover task boundary
+```
+
+to:
+
+```text
+adapt useful features + refine task boundary
+```
+
+This is often the difference between difficult global search and relatively local
+adaptation.
+
+#### Sample Complexity Reduction
+
+A target task with limited labels benefits because those labels no longer need to
+teach the model basic structure from zero.
+
+Instead, target labels are spent more efficiently on:
+
+- calibration
+- specialization
+- task-specific separation
+- output behavior
+
+This is why transfer learning often helps most when the target dataset is small
+or expensive to label.
+
+#### Why It Works Especially Well In CNNs And Transformers
+
+CNNs transfer well because convolutional hierarchies naturally learn reusable
+visual primitives:
+
+- early layers detect edges
+- intermediate layers detect motifs and parts
+- later layers compose those into object-level structure
+
+Transformers transfer well because self-attention builds broad contextual
+representations that are useful across many objectives:
+
+- classification
+- retrieval
+- generation
+- instruction following
+- multimodal grounding
+
+So in both CNNs and transformers, transfer works because the architecture learns
+reusable intermediate structure, not just a narrow final classifier.
+
 #### 1. Representation View
 
 The source model learns a feature map:
@@ -459,3 +547,9 @@ Transfer learning is best understood as the interaction of:
 It is not merely "reusing a model." It is a statistical and optimization
 strategy for reducing the effective difficulty of the target problem by importing
 structure learned elsewhere.
+
+## Further Reading
+
+- `Canonical paper`: Pan and Yang, "A Survey on Transfer Learning" (2010).
+- `Best intuition resource`: Andrew Ng's transfer learning lectures in the DeepLearning.AI CNN sequence and the CS231n transfer learning notes.
+- `Best practical code resource`: PyTorch's transfer learning tutorial and the Hugging Face Transformers fine-tuning examples.
